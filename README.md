@@ -75,7 +75,7 @@
 
 ### 📁 Структура репозитория
 pharmacy-customer-rfm-analysis/
-├── README.md # Описание проекта
+```├── README.md # Описание проекта
 ├── sql/
 │ └── rfm_analysis.sql # SQL-запросы для расчёта RFM
 ├── reports/
@@ -84,6 +84,7 @@ pharmacy-customer-rfm-analysis/
 │ └── rfm_clients.csv # Детальные данные по клиентам
 └── dashboard/
 └── pharmacy_rfm.pbix # Дашборд PowerBI (в разработке)
+```
 
 ---
 
