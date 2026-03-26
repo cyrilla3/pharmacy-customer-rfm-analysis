@@ -73,21 +73,6 @@
 
 ---
 
-### 📁 Структура репозитория
-pharmacy-customer-rfm-analysis/
-```├── README.md # Описание проекта
-├── sql/
-│ └── rfm_analysis.sql # SQL-запросы для расчёта RFM
-├── reports/
-│ └── rfm_segments_table.html # Таблица сегментов с приоритетами
-├── results/
-│ └── rfm_clients.csv # Детальные данные по клиентам
-└── dashboard/
-└── pharmacy_rfm.pbix # Дашборд PowerBI (в разработке)
-```
-
----
-
 ### 🔧 Стек
 
 - **PostgreSQL** — расчёт RFM-метрик
