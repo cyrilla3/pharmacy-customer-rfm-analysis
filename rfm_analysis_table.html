@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RFM-сегменты аптечной сети</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+            background-color: #f5f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 20px;
+            overflow-x: auto;
+        }
+        h2 {
+            text-align: center;
+            color: #1e293b;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            min-width: 700px;
+        }
+        th {
+            background-color: #1e293b;
+            color: white;
+            padding: 12px 16px;
+            font-weight: 600;
+            text-align: center;
+            border: 1px solid #334155;
+        }
+        td {
+            padding: 10px 16px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        tr:hover {
+            background-color: #f8fafc;
+        }
+        .priority-critical {
+            background-color: #fee2e2;
+            border-left: 4px solid #dc2626;
+        }
+        .priority-high {
+            background-color: #fff3e3;
+            border-left: 4px solid #f97316;
+        }
+        .priority-medium {
+            background-color: #fef9e3;
+            border-left: 4px solid #eab308;
+        }
+        .priority-low {
+            background-color: #e6f7e6;
+            border-left: 4px solid #22c55e;
+        }
+        .segment-code {
+            font-weight: 700;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+        }
+        .clients-count {
+            font-weight: 600;
+        }
+        .footer-note {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #64748b;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 16px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>RFM-анализ клиентской базы</h2>
+    <div class="subtitle">Аптечная сеть | Период: 01.01.2022 – 09.06.2022 | Группировка: 3 уровня (1–3)</div>
+    <table>
+        <thead>
+            <tr>
+                <th>Приоритет</th>
+                <th>RFM-сегмент</th>
+                <th>Количество клиентов</th>
+                <th>Средний Recency (дней)</th>
+                <th>Средняя частота (чеков)</th>
+                <th>Средний чек (руб)</th>
+                <th>Характеристика</th>
+                <th>Рекомендация</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Критический приоритет -->
+            <tr class="priority-critical">
+                <td>🔴 Критический</td>
+                <td class="segment-code">233</td>
+                <td class="clients-count">372</td>
+                <td>48,8</td>
+                <td>4,5</td>
+                <td>4 926,18</td>
+                <td>Затухающие VIP: высокая частота и чек, но не покупали ~1,5 месяца</td>
+                <td>Срочное вовлечение, персональная коммуникация, выяснение причины</td>
+            </tr>
+            <tr class="priority-critical">
+                <td>🔴 Критический</td>
+                <td class="segment-code">133</td>
+                <td class="clients-count">177</td>
+                <td>102,1</td>
+                <td>3,0</td>
+                <td>4 160,13</td>
+                <td>Потерянные VIP: ранее часто покупали с высоким чеком</td>
+                <td>Возвращающие скидки, персональное предложение</td>
+            </tr>
+            <tr class="priority-critical">
+                <td>🔴 Критический</td>
+                <td class="segment-code">333</td>
+                <td class="clients-count">619</td>
+                <td>10,5</td>
+                <td>7,4</td>
+                <td>7 589,81</td>
+                <td>Золотой сегмент: самые активные, высокий чек, высокая частота</td>
+                <td>Эксклюзивные предложения, повышенный кэшбек, удержание</td>
+            </tr>
+            
+            <!-- Высокий приоритет -->
+            <tr class="priority-high">
+                <td>🟠 Высокий</td>
+                <td class="segment-code">123</td>
+                <td class="clients-count">101</td>
+                <td>110,6</td>
+                <td>1,0</td>
+                <td>3 430,29</td>
+                <td>Потерянные с высоким чеком, редкие покупки</td>
+                <td>Персональная скидка для возврата</td>
+            </tr>
+            <tr class="priority-high">
+                <td>🟠 Высокий</td>
+                <td class="segment-code">223</td>
+                <td class="clients-count">79</td>
+                <td>50,8</td>
+                <td>1,0</td>
+                <td>3 458,43</td>
+                <td>Недавние с высоким чеком, пока не вернулись</td>
+                <td>Скидка на следующий визит, бонус за повторную покупку</td>
+            </tr>
+            <tr class="priority-high">
+                <td>🟠 Высокий</td>
+                <td class="segment-code">323</td>
+                <td class="clients-count">51</td>
+                <td>14,0</td>
+                <td>1,0</td>
+                <td>3 281,75</td>
+                <td>Новые ценные клиенты с крупной покупкой</td>
+                <td>Программа лояльности, приветственный бонус</td>
+            </tr>
+            <tr class="priority-high">
+                <td>🟠 Высокий</td>
+                <td class="segment-code">332</td>
+                <td class="clients-count">257</td>
+                <td>11,7</td>
+                <td>3,0</td>
+                <td>1 419,33</td>
+                <td>Активные, средний чек, высокая частота</td>
+                <td>Накопительные скидки, информирование о новинках</td>
+            </tr>
+            
+            <!-- Средний приоритет -->
+            <tr class="priority-medium">
+                <td>🟡 Средний</td>
+                <td class="segment-code">122</td>
+                <td class="clients-count">309</td>
+                <td>118,6</td>
+                <td>1,0</td>
+                <td>1 221,13</td>
+                <td>Давно не покупали, средний чек</td>
+                <td>Возвращающая скидка, напоминание</td>
+            </tr>
+            <tr class="priority-medium">
+                <td>🟡 Средний</td>
+                <td class="segment-code">132</td>
+                <td class="clients-count">181</td>
+                <td>106,3</td>
+                <td>2,4</td>
+                <td>1 398,15</td>
+                <td>Ранее лояльные со средним чеком</td>
+                <td>Напоминание, акция на привычные категории</td>
+            </tr>
+            <tr class="priority-medium">
+                <td>🟡 Средний</td>
+                <td class="segment-code">222</td>
+                <td class="clients-count">235</td>
+                <td>52,6</td>
+                <td>1,0</td>
+                <td>1 213,02</td>
+                <td>Недавние клиенты с хорошим чеком</td>
+                <td>Поддержка контакта, предложение сопутствующих товаров</td>
+            </tr>
+            <tr class="priority-medium">
+                <td>🟡 Средний</td>
+                <td class="segment-code">322</td>
+                <td class="clients-count">152</td>
+                <td>11,4</td>
+                <td>1,0</td>
+                <td>1 244,71</td>
+                <td>Свежие клиенты со средним чеком</td>
+                <td>Бонус за следующую покупку</td>
+            </tr>
+            <tr class="priority-medium">
+                <td>🟡 Средний</td>
+                <td class="segment-code">232</td>
+                <td class="clients-count">224</td>
+                <td>49,5</td>
+                <td>2,9</td>
+                <td>1 377,30</td>
+                <td>Ядро лояльной аудитории, средний чек</td>
+                <td>Программа лояльности, кросс-продажи</td>
+            </tr>
+            
+            <!-- Низкий приоритет -->
+            <tr class="priority-low">
+                <td>🟢 Низкий</td>
+                <td class="segment-code">121</td>
+                <td class="clients-count">533</td>
+                <td>120,0</td>
+                <td>1,0</td>
+                <td>424,52</td>
+                <td>Давно потерянные, низкий чек</td>
+                <td>Не тратить бюджет, массовые рассылки</td>
+            </tr>
+            <tr class="priority-low">
+                <td>🟢 Низкий</td>
+                <td class="segment-code">131</td>
+                <td class="clients-count">80</td>
+                <td>105,0</td>
+                <td>2,2</td>
+                <td>521,78</td>
+                <td>Часто, но дёшево, давно не покупали</td>
+                <td>Массовые акции, низкий приоритет</td>
+            </tr>
+            <tr class="priority-low">
+                <td>🟢 Низкий</td>
+                <td class="segment-code">221</td>
+                <td class="clients-count">342</td>
+                <td>51,9</td>
+                <td>1,0</td>
+                <td>420,35</td>
+                <td>Недавние разовые, низкий чек</td>
+                <td>Только массовые рассылки</td>
+            </tr>
+            <tr class="priority-low">
+                <td>🟢 Низкий</td>
+                <td class="segment-code">231</td>
+                <td class="clients-count">92</td>
+                <td>52,7</td>
+                <td>2,2</td>
+                <td>510,83</td>
+                <td>Часто, но дёшево, недавние</td>
+                <td>Акции на товары первой необходимости</td>
+            </tr>
+            <tr class="priority-low">
+                <td>🟢 Низкий</td>
+                <td class="segment-code">321</td>
+                <td class="clients-count">238</td>
+                <td>10,1</td>
+                <td>1,0</td>
+                <td>436,10</td>
+                <td>Свежие разовые, низкий чек</td>
+                <td>Общая рассылка, без персональных предложений</td>
+            </tr>
+            <tr class="priority-low">
+                <td>🟢 Низкий</td>
+                <td class="segment-code">331</td>
+                <td class="clients-count">72</td>
+                <td>12,7</td>
+                <td>2,3</td>
+                <td>541,75</td>
+                <td>Часто, но дёшево, свежие</td>
+                <td>Массовые акции</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="footer-note">
+        <strong>Источник данных:</strong> bonuscheques (01.01.2022 – 09.06.2022) | <strong>Метод:</strong> RFM с разбивкой на 3 уровня по 33-му и 66-му перцентилям<br>
+        <strong>Итоговое распределение:</strong> Всего клиентов с бонусной картой: ~3 900 | Период: полгода
+    </div>
+</div>
+</body>
+</html>
